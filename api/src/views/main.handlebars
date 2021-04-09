@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+{{#with user}}
+  <h3>{{firstName}} {{capitalize lastName}}</h3>
+  {{else}}
+  <h3>Utilisateur inconnu</h3>
+{{/with}}
+{{#if user}}
+  <ul>
+    {{#each navItems}}
+    <li>{{formatIndex @index}} - {{this}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
