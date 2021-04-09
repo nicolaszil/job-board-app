@@ -16,7 +16,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "start": "nodemon ./src/index.js",
+    "start:bdd": "/Users/nico/dev/training/mongodb/bin/mongod --dbpath=/Users/nico/dev/training/mongodb-data/"
   },
   "author": "",
   "license": "MIT"

@@ -1,45 +1,59 @@
 const express = require('express')
 const router = new express.Router()
 
-const parkings = require('../mocks/parkings.json')
+const Parking = require('../models/parking')
 
 const notFoundHandler = (req, res) => {
   res.status(404).send("Ressource not found");
 };
 
-router.get('/parkings', (req, res) => {
-  res.status(200).json(parkings);
+router.get('/parkings', async (req, res) => {
+  try {
+    const result = await Parking.find({}, { __v: 0 });
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).send("An error occured, please try again", error);
+  }
 });
 
-router.get('/parkings/:id', (req, res, next) => {
-  const id = Number(req.params.id);
-  const parking = parkings.find((parking => parking.id === id));
-  if (parking) return res.status(200).json(parking);
-  next();
+router.get('/parkings/:id', async (req, res, next) => {
+  try {
+    const result = await Parking.findById(req.params.id, { __v: 0 });
+    if (result) return res.status(200).json(result);
+    next();
+  } catch (error) {
+    res.status(500).send("An error occured, please try again", error);
+  }
 }, notFoundHandler);
 
-router.post('/parkings', (req, res) => {
-  parkings.push(req.body);
-  const parking = parkings.find(parking => parking.id === req.body.id);
-  if (parking) return res.status(201).end();
-  return res.status(500).send("An error occured, please try again");
+router.post('/parkings', async (req, res) => {
+  try {
+    const result = new Parking(req.body);
+    await result.save();
+    res.status(201).end();
+  } catch (error) {
+    res.status(500).send("An error occured, please try again", error);
+  }
 });
 
-router.put('/parkings/:id', (req, res, next) => {
-  const id = Number(req.params.id)
-  const parkingIndex = parkings.findIndex(parking => parking.id === id);
-  if (parkingIndex === -1) next();
-  const parking = { id, ...req.body };
-  parkings[parkingIndex] = parking;
-  return res.status(204).end();
+router.put('/parkings/:id', async (req, res, next) => {
+  try {
+    const result = await Parking.findByIdAndUpdate(req.params.id, req.body);
+    if (!result) next();
+    res.status(204).end();
+  } catch (error) {
+    res.status(500).send("An error occured, please try again", error);
+  }
 }, notFoundHandler);
 
-router.delete('/parkings/:id', (req, res, next) => {
-  const id = Number(req.params.id);
-  const parking = parkings.find(parking => parking.id === id);
-  if (!parking) next();
-  parkings.splice(parkings.indexOf(parking), 1);
-  return res.status(204).end();
+router.delete('/parkings/:id', async (req, res, next) => {
+  try {
+    const result = await Parking.findByIdAndDelete(req.params.id);
+    if (!result) next();
+    res.status(204).end();
+  } catch (error) {
+    res.status(500).send("An error occured, please try again", error);
+  }
 }, notFoundHandler);
 
 module.exports = router

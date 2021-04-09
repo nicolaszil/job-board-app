@@ -5,11 +5,9 @@ const cors = require("cors")
 const rateLimit = require("express-rate-limit")
 const handlebars = require('express-handlebars')
 
-require('./db')()
-// require('./db-mongoose')()
-// require('./db-mongoose-queries')()
 const mainRouter = require('./routes/main')
 const parkingRouter = require('./routes/parking')
+require('./db')()
 
 const app = express()
 
