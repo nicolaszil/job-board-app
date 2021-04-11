@@ -5,9 +5,9 @@ const cors = require("cors")
 const rateLimit = require("express-rate-limit")
 const handlebars = require('express-handlebars')
 
+require('./db')
 const mainRouter = require('./routes/main')
 const parkingRouter = require('./routes/parking')
-require('./db')()
 
 const app = express()
 
@@ -17,15 +17,16 @@ const limiterConfig = {
   message: "Too many accounts created from this IP, please try again after a minute"
 };
 
-app.engine('handlebars', handlebars({ layoutsDir: './views/layouts' }))
+app.engine("handlebars", handlebars())
+app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars")
 
 app.use(morgan("common"))
 app.use(helmet())
-app.use(cors({ origin: ['http://localhost:3000'] }))
+app.use(cors({ origin: ["http://localhost:3000"] }))
 app.use(rateLimit(limiterConfig))
 
-app.use(express.static('public'))
+app.use(express.static("public"))
 app.use(express.json());
 app.use(mainRouter);
 app.use(parkingRouter);
