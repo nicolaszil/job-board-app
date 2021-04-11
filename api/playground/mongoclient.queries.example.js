@@ -1,29 +1,44 @@
-module.exports = function() {
-  const parking = require('./models/parking');
+const mongodb = require('mongodb')
+const mongoClient = mongodb.MongoClient;
 
-  parking.find({ type: 'AIRPORT' }, { _id: 0, __v: 0 }, (error, result) => {
-    if (error) return console.log("Unable to find parkings: ", error);
-    console.log("find", result);
-  });
+const connectURL = 'mongodb://127.0.0.1:27017'
+const config = { useNewUrlParser: true };
+const dbName = 'mongo-learning';
 
-  parking.findOne({ name: "Parking 1" }, (error, result) => {
-    if (error) return console.log("Unable to find parking: ", error);
-    console.log("findOne", result);
-  });
+mongoClient.connect(connectURL, config, (error, client) => {
+  if (error) return console.log("Unable to connect to database !")
+  console.log("Connected to MongoDB");
 
-  parking.create(
+  const db = client.db(dbName);
+  const parkings = db.collection('parkings');
+
+  parkings
+    .find({ type: "AIRPORT" })
+    .toArray((error, result) => {
+      if (error) return console.log("Unable to find parkings: ", error);
+      console.log("find", result);
+    });
+
+  parkings.findOne(
+    { name: "Parking 3" },
+    (error, result) => {
+      if (error) return console.log("Unable to find parking: ", error);
+      console.log("findOne", result);
+    });
+
+  parkings.insertOne(
     {
       name: `Parking ${Math.floor(Math.random() * 5) + 1}`,
       type: "STATION",
       city: "Toulouse",
     },
     (error, result) => {
-      if (error) return console.log("Unable to save parking: ", error);
-      console.log("insertOne", result);
+      if (error) return console.log("Unable to insert parking: ", error);
+      console.log("insertOne", result.insertedCount);
     },
   );
 
-  parking.insertMany(
+  parkings.insertMany(
     [
       {
           "name":"Parking 1",
@@ -68,20 +83,20 @@ module.exports = function() {
     ],
     (error, result) => {
       if (error) return console.log("Unable to insert parkings: ", error);
-      console.log("insertMany", result);
+      console.log("insertMany", result.insertedCount);
     },
   );
 
-  parking.updateOne(
+  parkings.updateOne(
     { name: "Parking 5" },
     { $set: { status: "open", used: false } },
     (error, result) => {
       if (error) return console.log("Unable to update parking: ", error);
-      console.log("updateOne", result.ok);
+      console.log("updateOne", result.result.ok);
     },
   );
 
-  parking.updateMany(
+  parkings.updateMany(
     { type: "STATION" },
     [
       { $set: { status: "open", used: false } },
@@ -89,23 +104,23 @@ module.exports = function() {
     ],
     (error, result) => {
       if (error) return console.log("Unable to update parkings: ", error);
-      console.log("updateMany", result.ok);
+      console.log("updateMany", result.modifiedCount);
     },
   );
 
-  parking.deleteOne(
+  parkings.deleteOne(
     { city: "Toulouse" },
     (error, result) => {
       if (error) return console.log("Unable to delete parking: ", error);
-      console.log("deleteOne", result.ok);
+      console.log("deleteOne", result.deletedCount);
     },
   );
 
-  parking.deleteMany(
-    { type: "OTHER" },
+  parkings.deleteMany(
+    {},
     (error, result) => {
       if (error) return console.log("Unable to delete parkings: ", error);
-      console.log("deleteMany", result.ok);
+      console.log("deleteMany", result.deletedCount);
     },
   );
-}
+});
