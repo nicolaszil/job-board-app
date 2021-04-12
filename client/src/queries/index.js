@@ -1,3 +1,1 @@
-export {
-  getSomethingFromYourApi,
-} from "./app";
+export { getAllCandidates, getOneCandidate } from "./candidates";

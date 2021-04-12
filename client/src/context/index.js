@@ -7,7 +7,7 @@ export {
   RouterProvider,
   AppRoutes,
   AllPaths,
-  HomePath,
+  CandidatePath,
 } from "./router";
 export { GlobalStateProvider, useGlobalState } from "./state";
 export { ThemeProvider } from "./theme";

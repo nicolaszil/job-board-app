@@ -3,7 +3,8 @@ import { createBrowserHistory } from "history";
 
 import { useGlobalState } from "../context";
 import { Layout } from "../components/App/AppLayout";
-import HomeComponent from "../components/App/Home";
+import { Header } from "../components/App/AppHeader";
+import { Candidate as CandidateComponent } from "../components/Candidate";
 
 const history = createBrowserHistory();
 
@@ -20,16 +21,18 @@ export const RouterProvider = ({ children }) => {
 
 export const AppRoutes = () => (
   <Layout>
+    <Header />
     <Switch>
-      <Route key="home" path={HomePath} component={HomeComponent} exact />
+      <Route key="candidate" path={CandidatePath} component={CandidateComponent} exact />
       {/* Put your own routes here... */}
       <Redirect to={HomePath} />
     </Switch>
   </Layout>
 );
 
-export const HomePath = "/"
+export const HomePath = "/";
+export const CandidatePath = "/candidates/:id";
 export const AllPaths = [
-  HomePath,
+  CandidatePath,
   {/* Export your own paths here... */}
 ];

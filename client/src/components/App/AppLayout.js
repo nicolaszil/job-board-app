@@ -2,7 +2,6 @@ import { makeStyles, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
   content: {
-    height: "100vh",
     display: "flex",
     flexDirection: "column",
   },

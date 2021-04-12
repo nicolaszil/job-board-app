@@ -7,5 +7,5 @@ ReactDOM.render(
   <AppProvider>
     <Root />
   </AppProvider>,
-  document.getElementById('react-boilerplate-client')
+  document.getElementById('react-job-board-client')
 );

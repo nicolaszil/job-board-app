@@ -25,10 +25,11 @@ const styles = {
       main: "#DB2F3C",
     },
     secondary: {
-      main: "#FFFFFF",
+      main: "#00008B",
     },
     text: {
-      primary: "#555555",
+      primary: "#000000",
+      secondary: "#555555",
     },
   },
   typography: {
@@ -59,13 +60,13 @@ const styles = {
     },
     h5: {
       fontSize: "16px",
-      lineHeight: "32px",
+      lineHeight: "24px",
       fontWeight: 400,
       letterSpacing: "0.5px",
     },
     h6: {
       fontSize: "18px",
-      lineHeight: "22px",
+      lineHeight: "24px",
       fontWeight: 500,
       letterSpacing: "0.5px",
     },

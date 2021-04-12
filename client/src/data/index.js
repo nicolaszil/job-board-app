@@ -1,1 +1,1 @@
-export { formatSomething } from "./app";
+export { formatAllCandidates, formatOneCandidate } from "./candidates";

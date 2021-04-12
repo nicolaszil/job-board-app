@@ -1,8 +1,5 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import { defineMessages } from "react-intl";
-import { NavLink } from "react-router-dom";
-
-import { HomePath } from "../../context";
 
 import LogoIcon from "../../assets/logo.svg";
 
@@ -22,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const messages = defineMessages({
-  title: "React Boilerplate Client",
+  title: "Mon CV",
 });
 
 export const Header = ({ title }) => {
@@ -31,9 +28,7 @@ export const Header = ({ title }) => {
   return (
     <Grid className={classes.root} container alignItems="center">
       <Grid container item xs={3} justify="flex-start">
-        <NavLink to={HomePath}>
           <LogoIcon />
-        </NavLink>
       </Grid>
 
       <Grid container item xs={6} justify="center">

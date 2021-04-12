@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate-client",
+  "name": "react-job-board-client",
   "version": "1.0.0",
-  "description": "React Boilerplate client",
+  "description": "React Job board client",
   "main": "index.js",
   "author": "Nicolas ZILBERSCHLAG",
   "license": "MIT",
