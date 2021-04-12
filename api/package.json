@@ -1,8 +1,10 @@
 {
-  "name": "training-api",
+  "name": "node-mongo-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend API Server",
   "main": "index.js",
+  "author": "Nicolas ZILBERSCHLAG",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -16,9 +18,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon ./src/index.js",
+    "start": "nodemon ./src/server.js",
     "start:bdd": "/Users/nico/dev/training/mongodb/bin/mongod --dbpath=/Users/nico/dev/training/mongodb-data/"
-  },
-  "author": "",
-  "license": "MIT"
+  }
 }

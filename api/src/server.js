@@ -6,8 +6,10 @@ const rateLimit = require("express-rate-limit")
 const handlebars = require('express-handlebars')
 
 require('./db')
+require('../playground/persist-mock-data')
 const mainRouter = require('./routes/main')
 const parkingRouter = require('./routes/parking')
+const candidateRouter = require('./routes/candidate')
 
 const app = express()
 
@@ -23,13 +25,14 @@ app.set("view engine", "handlebars")
 
 app.use(morgan("common"))
 app.use(helmet())
-app.use(cors({ origin: ["http://localhost:3000"] }))
+app.use(cors({ origin: ["http://localhost:3000", "http://localhost:8010"] }))
 app.use(rateLimit(limiterConfig))
 
 app.use(express.static("public"))
 app.use(express.json());
 app.use(mainRouter);
 app.use(parkingRouter);
+app.use(candidateRouter);
 
 app.listen(3000, () => {
   console.log("Server is up on port 3000")

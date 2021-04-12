@@ -1,0 +1,104 @@
+[
+  {
+    "jobTitle": "React Lead Front | Formateur React/Javascript",
+    "jobStatus": "Freelance",
+    "companyName": "ENEDIS",
+    "startDate": 1609491600000,
+    "endDate": 1618041600000,
+    "isCurrent": true,
+    "location": "Remote",
+    "project": "Refonte d'une application de gestion de Parc (lignes téléphoniques RTC)",
+    "techStack": "React 17 avec Babel, Hooks + Context + Overmind, websocket sockJS, React query + data layer, Material UI, Css-in-JS, Tests E2E Cypress, ESLint/Prettier, StoryBook",
+    "tasks": [
+      "Audit de l'application existante et des problématiques techniques rencontrées par l'équipe",
+      "Création d'un nouveau socle technique sous React 17 (alimenté par des API en Java 8)",
+      "Développement des nouveaux écrans de la nouvelle UX/UI (refonte du front-end)",
+      "Formation sur Javascript et React (hooks compris) pour 3 développeurs Back-end Java",
+      "Mise en place et implémentation du workflow d'authentification côté client",
+      "Référent technique - support + code review sur les nouvelles features",
+      "Mise en place de : design system, architecture de code, environnement de développement",
+      "Participation à la conception de l'outil en mode Agile",
+      "Partage des bonnes pratiques de développement",
+      "Rédaction de documentation technique"
+    ]
+  },
+  {
+    "jobTitle": "React/Node Full Stack Developer",
+    "jobStatus": "Freelance",
+    "companyName": "AXA Climate",
+    "startDate": 1609491600000,
+    "endDate": 1618041600000,
+    "isCurrent": false,
+    "location": "Remote",
+    "duration": "6 mois + 2",
+    "project": "Création d'une application SaaS B2B de prévisions climatiques en temps réel",
+    "techStack": "React 16 avec Babel + Typescript, Node.js avec GraphQL API, RxJS, Hooks + Overmind, Mapbox + DeckGL, Material UI, PostgreSQL, Cosmos, Tests Cypress, Gitlab CI, AWS",
+    "tasks": [
+      "Développement d'un SPA avec cartographie (style Google Maps) avec React 16 et GraphQL",
+      "Développement de fonctionnalités de visualisation de données sur des cartes",
+      "Participation au développement des API avec Node.js et AWS",
+      "Mise en place d'un design system et d'une architecture de code",
+      "Mise en place de tests d'intégration via Cypress",
+      "Participation à la conception de l'outil en mode Agile",
+      "Partage des bonnes pratiques de développement",
+      "Rédaction de documentation technique",
+      "POC sur différents outils d'analyse et de tracking"
+    ]
+  },
+  {
+    "jobTitle": "React Tech Lead - Responsable Performance - Formateur React/Javascript",
+    "jobStatus": "Freelance",
+    "companyName": "BUT",
+    "startDate": 1609491600000,
+    "endDate": 1618041600000,
+    "isCurrent": false,
+    "location": "Remote",
+    "project": "Amélioration de la performance, audit et formation des développeurs internes",
+    "techStack": "Node.js, React 16 avec Babel + Redux, Redux-saga, Redux-thunk, Firebase, MySQL, ElasticSearch, API Rest, PHP, Twig, Docker, AWS, Jquery, Packaging avec WebPack, GIT",
+    "tasks": [
+      "Audit complet du front-end et son architecture (PHP Twig React)",
+      "Audit technique de la performance du code Javascript sous React 16 et best practices",
+      "Nombreux POC pour mise en place du Server Side Rendering avec problematiques SEO",
+      "Création d'une webapp de monitoring performance avec React 16 et Node.js",
+      "Implémentation de l'API WebPageTest et création d'un CLI avec scénarios d'analyses de perf",
+      "Formation React/Redux d'un intégrateur et plusieurs développeurs en interne",
+      "Recommandations pour amener le site e-commerce vers une Single Page Application"
+    ]
+  }, 
+  {
+    "jobTitle": "React Web & Mobile Javascript Developer",
+    "jobStatus": "Freelance",
+    "companyName": "Louvre Hotels Group",
+    "startDate": 1609491600000,
+    "endDate": 1618041600000,
+    "isCurrent": false,
+    "location": "Remote",
+    "project": "Refonte from scratch des Front des marques du groupe : GoldenTulip, Campanile, Kyriad.",
+    "techStack": "React Native, Node.js avec SSR + React.js avec Babel + Immutable.js + Redux, Redux-saga, Redux-form, GraphQL, Drupal avec DotNet + divers webservices métiers, SASS + BEM, Packaging avec WebPack, GIT",
+    "tasks": [
+      "Développement d'un client SPA avec React 16 et Redux",
+      "Mise en place du Server Side Rendering coté Node.js",
+      "Développement d'une application mobile avec React Native",
+      "Participation à la conception de l'outil en mode Agile",
+      "Partage des bonnes pratiques de développement",
+      "Rédaction de documentation technique"
+    ]
+  },
+  {
+    "jobTitle": "Angular Javascript Developer",
+    "jobStatus": "Freelance",
+    "companyName": "Les cinémas Gaumont et Pathé",
+    "startDate": 1609491600000,
+    "endDate": 1618041600000,
+    "isCurrent": false,
+    "location": "Remote",
+    "project": "Développement from scratch du nouveau tunnel d'achat : client SPA - API - BO",
+    "techStack": "Angular 2 avec Typescript Ngrx/store (Redux) + RxJS, Symfony 3 avec PHP7, Docker, AWS, Nginx + Redis + zeroMQ(ZMQ) + ElasticSearch/Logstash/Kibana + PostGreSQL, Tests avec Protractor et PhpUnit + Behat, Packaging avec WebPack, GIT avec GitLab",
+    "tasks": [
+      "Création d'une application SPA sous Angular 2.3.0 avec RxJS + Ngrx/Store (Redux)",
+      "Nombreuses problématiques de cache et flux de données asynchrones",
+      "Création d'une API RESTFul sous Symfony 3.2 (Architecture DDD + Event sourcing)",
+      "Implémentation d'un moteur de tarification et divers webservices de réservation et paiement"
+    ]
+  }
+]
