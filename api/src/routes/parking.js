@@ -39,8 +39,8 @@ router.post('/parkings', async (req, res) => {
 router.put('/parkings/:id', async (req, res, next) => {
   try {
     const result = await Parking.findByIdAndUpdate(req.params.id, req.body);
-    if (!result) next();
-    res.status(204).end();
+    if (result) return res.status(204).end();
+    next();
   } catch (error) {
     res.status(500).send("An error occured, please try again", error);
   }
@@ -49,8 +49,8 @@ router.put('/parkings/:id', async (req, res, next) => {
 router.delete('/parkings/:id', async (req, res, next) => {
   try {
     const result = await Parking.findByIdAndDelete(req.params.id);
-    if (!result) next();
-    res.status(204).end();
+    if (result) return res.status(204).end();
+    next();
   } catch (error) {
     res.status(500).send("An error occured, please try again", error);
   }
