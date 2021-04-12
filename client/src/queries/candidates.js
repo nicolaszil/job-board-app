@@ -4,7 +4,7 @@ import { generatePath } from "react-router";
 import { App as endpoints } from "../../config/api/endpoints";
 import { formatAllCandidates, formatOneCandidate } from "../data";
 
-export const getAllCandidates = async (id, updater) => {
+export const getAllCandidates = async (updater) => {
   try {
     const { data } = await client.get(endpoints.getAllCandidates);
     const candidates = formatAllCandidates(data);

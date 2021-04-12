@@ -4,7 +4,7 @@ export const formatAllCandidates = (data) => {
   const candidates = [];
 
   data.forEach(element => {
-    candidate.push(formatOneCandidate(element));
+    candidates.push(formatOneCandidate(element));
   })
 
   return candidates;
